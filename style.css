@@ -1,0 +1,423 @@
+/* | IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* | CSS RESET  */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* | UTILITY CLASSES */
+li {
+	list-style-type: none;
+}
+
+.cp {
+	cursor: pointer;
+}
+
+.no-wrap,
+span {
+	white-space: nowrap;
+}
+
+p {
+	white-space: wrap;
+}
+
+/* | VARIABLES */
+:root {
+	/* | COLORS  */
+	--red: hsl(0, 100%, 74%);
+	--green: hsl(154, 59%, 51%);
+	--green-op: hsl(154, 59%, 51%, 0.5);
+	--blue: hsl(248, 32%, 49%);
+	--dark-blue: hsl(249, 10%, 26%);
+	--dark-blue-op1: hsla(249, 10%, 26%, 0.5);
+	--dark-blue-op: hsla(249, 10%, 26%, 0.2);
+	--grayish-blue: hsl(246, 25%, 77%);
+	--white: hsl(0, 0%, 100%);
+
+	/* | FONTS  */
+	--h1-fonts: 700 55px 'Poppins';
+	--h2-fonts: 700 40px 'Poppins';
+	--p-fonts: 400 18px 'Poppins';
+	--small-fonts: 400 12px 'Poppins';
+}
+
+/* | GENERAL STYLES */
+html {
+	height: max(100%, 900px);
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 100px 165px;
+	background: var(--red) url(img/bg-intro-desktop.png) no-repeat;
+	background-size: auto;
+	font: var(--p-fonts);
+	color: var(--white);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 32px;
+}
+
+.login-section,
+.text-area,
+.complete {
+	width: 50%;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	gap: 24px;
+}
+
+h1 {
+	font: var(--h1-fonts);
+}
+
+.login-section > * {
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 8px 0 0 var(--dark-blue-op);
+}
+
+.login-section > p {
+	height: 60px;
+	background-color: var(--blue);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-section > p span {
+	font-weight: 600;
+}
+
+ul.form {
+	padding: 40px 40px 45px;
+	background-color: var(--white);
+	display: flex;
+	flex-flow: column;
+	gap: 20px;
+}
+
+ul.form > * {
+	width: 100%;
+}
+
+ul.form li {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: flex-end;
+	gap: 10px;
+}
+
+.input {
+	width: 100%;
+	height: 56px;
+	padding-inline: 30px 24px;
+	border: 2px solid var(--grayish-blue);
+	border-radius: 5px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.input:focus-within {
+	border: 2px solid var(--red);
+}
+
+.input img {
+	display: none;
+	width: 24px;
+	height: 24px;
+}
+
+input,
+button {
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	font: inherit;
+	color: var(--dark-blue);
+}
+
+button {
+	width: 100%;
+	height: 52px;
+	background-color: var(--green);
+	box-shadow: 0 4px 0 0 var(--dark-blue-op1);
+	border-radius: 5px;
+	color: inherit;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+li > p:last-child,
+ul.form li:last-child {
+	font: var(--small-fonts);
+	color: var(--red);
+}
+
+ul.form li:last-child {
+	color: var(--grayish-blue);
+	display: flex;
+	flex-flow: row nowrap;
+	gap: 0;
+}
+
+ul.form li:last-child span {
+	font-weight: 600;
+	color: var(--red);
+}
+
+.complete {
+	display: none;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 24px;
+}
+
+.complete > * {
+	width: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+img[alt='Completed Tick'] {
+	width: 80px;
+	height: 80px;
+}
+
+h2 {
+	font: var(--h2-fonts);
+}
+
+.complete p {
+	font: var(--p-fonts);
+}
+
+.complete p span {
+	text-transform: capitalize;
+}
+
+@media screen and (max-width: 1200px) {
+	ul.form li:last-child {
+		flex-flow: column;
+		gap: 10px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-fonts: 700 45px 'Poppins';
+	}
+
+	/* | GENERAL STYLES */
+	body {
+		padding: 100px 50px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	/* || UTILITY STYLES */
+	.no-wrap,
+	span {
+		white-space: wrap;
+	}
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-fonts: 700 60px 'Poppins';
+		--p-fonts: 400 36px 'Poppins';
+		--small-fonts: 400 24px 'Poppins';
+	}
+
+	/* | GENERAL STYLES */
+	html {
+		height: auto;
+	}
+
+	body {
+		padding: 196px 48px;
+		background: var(--red) url(img/bg-intro-mobile.png) no-repeat;
+		flex-flow: column;
+		gap: 128px;
+	}
+
+	.login-section,
+	.text-area,
+	.complete {
+		width: 100%;
+		text-align: center;
+		gap: 48px;
+	}
+
+	.login-section > * {
+		border-radius: 16px;
+		box-shadow: 0 16px 0 0 var(--dark-blue-op);
+	}
+
+	.login-section > p {
+		height: auto;
+		padding: 50px 160px;
+		display: block;
+	}
+
+	ul.form {
+		padding: 48px;
+		gap: 12px;
+	}
+
+	ul.form li {
+		gap: 16px;
+	}
+
+	.input {
+		height: 112px;
+		padding-inline: 36px;
+		border: 2px solid var(--grayish-blue);
+		border-radius: 10px;
+	}
+
+	.input:focus-within {
+		border: 2px solid var(--red);
+	}
+
+	.input img {
+		width: 36px;
+		height: 36px;
+	}
+
+	button {
+		height: 104px;
+		box-shadow: 0 8px 0 0 var(--dark-blue-op1);
+		border-radius: 10px;
+	}
+
+	ul.form li:last-child {
+		padding-inline: 60px;
+		flex-flow: row wrap;
+		gap: 0;
+	}
+
+	.login-section > p,
+	ul.form li:last-child {
+		display: block;
+	}
+
+	.complete {
+		gap: 24px;
+	}
+
+	.complete > * {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-fonts: 700 250% 'Poppins';
+		--p-fonts: 400 120% 'Poppins';
+		--small-fonts: 400 50% 'Poppins';
+	}
+
+	/* | GENERAL STYLES */
+	.login-section > p {
+		padding: 25px 80px;
+	}
+
+	ul.form li:last-child {
+		padding-inline: 30px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	/* | VARIABLES */
+	:root {
+		/* | FONTS  */
+		--h1-fonts: 700 30px 'Poppins';
+		--p-fonts: 400 18px 'Poppins';
+		--small-fonts: 400 12px 'Poppins';
+	}
+
+	/* | GENERAL STYLES */
+
+	body {
+		padding: 98px 24px;
+		gap: 64px;
+	}
+
+	.login-section,
+	.text-area,
+	.complete {
+		gap: 24px;
+	}
+
+	.login-section > * {
+		border-radius: 8px;
+		box-shadow: 0 8px 0 0 var(--dark-blue-op);
+	}
+
+	.login-section > p {
+		padding: 25px 80px;
+	}
+
+	ul.form {
+		padding: 24px;
+		gap: 6px;
+	}
+
+	ul.form li {
+		gap: 8px;
+	}
+
+	.input {
+		height: 56px;
+		padding-inline: 18px;
+		border: 1px solid var(--grayish-blue);
+		border-radius: 5px;
+	}
+
+	.input:focus-within {
+		border: 1px solid var(--red);
+	}
+
+	.input img {
+		width: 18px;
+		height: 18px;
+	}
+
+	button {
+		height: 52px;
+		box-shadow: 0 4px 0 0 var(--dark-blue-op1);
+		border-radius: 5px;
+	}
+
+	ul.form li:last-child {
+		padding-inline: 30px;
+	}
+}
+
+.show {
+	display: flex;
+}
+
+.hide {
+	display: none;
+}
